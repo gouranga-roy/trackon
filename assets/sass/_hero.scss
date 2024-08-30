@@ -15,7 +15,6 @@
             font-weight: 300;
             margin-bottom: 35px;
             position: relative;
-
             &::after {
                 content: ' ';
                 display: block;
@@ -45,13 +44,28 @@
 
 // Hero Two 
 .hero_about{
+    overflow-x: hidden;
+    @include sm {
+        padding: 0 10px;
+    }
     & .hero_sec__content {
         background: linear-gradient(135deg,#a6e72a 20%,#53ba00 80%);
-        height: 100%;
+        height: 100%; 
+        @include lg {
+            height: auto;
+            padding: 40px 10px 40px;
+        }
         & h1 {
             margin:  0 0 20px;
             &::after {
                 display: none;
+            }
+            @include lg {
+                font-size: 50px;
+                margin: 0;
+            }
+            @include sm {
+                font-size: 40px;
             }
         };
         & h2 {
@@ -60,6 +74,12 @@
             color: #fff;
             margin: 0 0 54px;
             position: relative;
+            @include lg {
+                margin: 0 0 20px;
+            }
+            @include lg {
+                font-size: 50px;
+            }
             &::after {
                 content: "";
                 position: absolute;
@@ -70,6 +90,9 @@
                 width: 90px;
                 height: 2px;
                 background-color: #53ba00;
+                @include lg {
+                    margin: -6px auto;
+                }
             }
         };
         & p{
@@ -79,9 +102,16 @@
             max-width: 800px;
             width: 100%;
             margin-bottom: 60px;
+            @include lg {
+                margin: 0 0 30px;
+            }
         };
         & .hero_btn {
             gap:20px;
+            @include sm {
+                flex-direction: column;
+                gap: 0;
+            }
             & .trackon_btn_1 {
                 background: #fff;
                 color:#000;
@@ -112,4 +142,20 @@
             width: 100%;
         }
     };
+}
+
+// Hero Three
+.hero_careers {
+    overflow-x: hidden;
+    & .herocr_image {
+        & img {
+            max-width: 100%;
+        }
+    }
+    & .hero_sec__content {
+        background: linear-gradient(135deg,#a6e72a 20%,#53ba00 80%);
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%;
+    }
 }

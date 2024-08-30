@@ -76,6 +76,11 @@
         }
     }
     & .contactItems{
+        @include sm {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         @include displaFlex(flex, space-between, start, row);
         & .contactItem{
             max-width: 190px;

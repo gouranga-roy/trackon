@@ -13,6 +13,25 @@ $(document).ready(function () {
     
       show_btn.click(function(){
         $("#myInput").modal('show');
+      })
+    
+    // Client Slider
+    $('.client-slider02').owlCarousel({
+        items:6,
+        loop:true,
+        margin:60,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:2
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:6
+            }
+        }
     })
 })
 window.addEventListener("scroll", function () {
@@ -43,6 +62,13 @@ window.addEventListener("scroll", function () {
     if (revParallax) {
         let reviewOffset = slkbkParallax.offsetTop;
         slkbkParallax.style.backgroundPositionY = (scrollPosition - reviewOffset) * 0.5 + "px";
+    }
+
+    // About section parallax
+    const aboutParallax = document.getElementById("about_prallax");
+    if (revParallax) {
+        let reviewOffset = aboutParallax.offsetTop;
+        aboutParallax.style.backgroundPositionY = (scrollPosition - reviewOffset) * 0.5 + "px";
     }
     
 });
